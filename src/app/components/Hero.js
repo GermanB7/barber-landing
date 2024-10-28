@@ -19,7 +19,7 @@ export default function Hero() {
         </p>
         <a
           href="#contact"
-          className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-3 px-6 rounded-md"
+          className="bg-accent hover:bg-yellow-500 text-gray-900 font-semibold py-3 px-6 rounded-md btn-transition"
         >
           Reserva tu cita
         </a>

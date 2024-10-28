@@ -26,3 +26,32 @@ body {
     text-wrap: balance;
   }
 }
+/* src/app/globals.css */
+.btn-transition {
+  @apply transition-all duration-200 ease-in-out;
+}
+/* src/app/globals.css */
+.btn-transition {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+.section-heading {
+  @apply text-4xl font-bold text-center text-primary mb-8;
+}
+
+.text-primary {
+  color: #4a3f35;
+}
+.bg-backgroundLight {
+  background-color: #f8f9fa;
+}
+.text-accent {
+  color: #f7a856;
+}
+.bg-accent {
+  background-color: #f7a856;
+}
+/* globals.css */
+.bg-brown {
+  background-color: #8B4513; /* Un tono marrón */
+}

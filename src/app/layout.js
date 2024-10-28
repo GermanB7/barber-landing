@@ -1,11 +1,15 @@
+// src/app/layout.js
 import localFont from "next/font/local";
 import "./globals.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -21,9 +25,18 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
-        {children}
+        {/* Navbar visible en todas las páginas */}
+        <Navbar />
+        
+        {/* Configuración flexible para que el Footer se mantenga al fondo si el contenido es corto */}
+        <main className="flex-grow bg-backgroundLight">
+          {children}
+        </main>
+        
+        {/* Footer al fondo */}
+        <Footer />
       </body>
     </html>
   );

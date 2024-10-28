@@ -9,14 +9,14 @@ import Footer from './components/Footer';
 export default function Home() {
   return (
     <div>
-      <Navbar />
+      
       <Hero />
       <StatsSection />
       <AppointmentSection />
       <ImageGallery /> {/* Galería de imágenes */}
       <ContactSection />
       <PricingAndTestimonialSection /> {/* Precios + Testimonios */}
-      <Footer />
+      
     </div>
   );
 }
