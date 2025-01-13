@@ -1,28 +1,27 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link'; // Usamos Link para la navegación en Next.js
+import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Efecto para cambiar el fondo cuando se hace scroll
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-black' : 'bg-transparent'
+        isScrolled ? "bg-black" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto flex justify-between items-center px-4 md:px-8 py-4">
@@ -33,38 +32,48 @@ export default function Navbar() {
 
         {/* Enlaces de navegación */}
         <nav className="hidden md:flex space-x-8">
-          <Link href="/" className="text-white border border-transparent rounded-full py-2 px-4 hover:border-white transition duration-200">
+          <Link
+            href="/"
+            className="text-white border border-transparent rounded-full py-2 px-4 hover:border-white transition duration-200"
+          >
             Home
           </Link>
-          <Link href="/services" className="text-white border border-transparent rounded-full py-2 px-4 hover:border-white transition duration-200">
+          <Link
+            href="/services"
+            className="text-white border border-transparent rounded-full py-2 px-4 hover:border-white transition duration-200"
+          >
             Services
           </Link>
-          <Link href="/about-us" className="text-white border border-transparent rounded-full py-2 px-4 hover:border-white transition duration-200">
+          <Link
+            href="/about-us"
+            className="text-white border border-transparent rounded-full py-2 px-4 hover:border-white transition duration-200"
+          >
             About us
           </Link>
-          <Link href="#news" className="text-white border border-transparent rounded-full py-2 px-4 hover:border-white transition duration-200">
-            News
-          </Link>
-          {/* Enlace corregido a Shop */}
-          <Link href="/shop" className="text-white border border-transparent rounded-full py-2 px-4 hover:border-white transition duration-200">
+          <Link
+            href="/shop"
+            className="text-white border border-transparent rounded-full py-2 px-4 hover:border-white transition duration-200"
+          >
             Shop
           </Link>
         </nav>
 
         {/* Botón "Contact us" */}
         <div className="hidden md:block">
-          <Link href="#contact" className="bg-transparent border border-white text-white py-2 px-4 rounded-full hover:bg-white hover:text-black transition duration-300">
+          <Link
+            href="/appointments"
+            className="bg-transparent border border-white text-white py-2 px-4 rounded-full hover:bg-white hover:text-black transition duration-300"
+          >
             Contact us
           </Link>
         </div>
 
-        {/* Icono del menú móvil */}
+        {/* Menú móvil */}
         <div className="md:hidden">
           <button
             className="text-white focus:outline-none"
             onClick={() => setMenuOpen(!menuOpen)}
           >
-            {/* Icono de menú de hamburguesa */}
             <svg
               className="w-6 h-6"
               fill="none"
@@ -87,23 +96,39 @@ export default function Navbar() {
       {menuOpen && (
         <div className="md:hidden bg-black shadow-md absolute top-16 left-0 w-full z-50">
           <nav className="flex flex-col items-center space-y-4 py-4">
-            <Link href="/" className="text-white hover:text-gray-600 transition duration-200" onClick={() => setMenuOpen(false)}>
+            <Link
+              href="/"
+              className="text-white hover:text-gray-600 transition duration-200"
+              onClick={() => setMenuOpen(false)}
+            >
               Home
             </Link>
-            <Link href="/services" className="text-white hover:text-gray-600 transition duration-200" onClick={() => setMenuOpen(false)}>
+            <Link
+              href="/services"
+              className="text-white hover:text-gray-600 transition duration-200"
+              onClick={() => setMenuOpen(false)}
+            >
               Services
             </Link>
-            <Link href="/about-us" className="text-white hover:text-gray-600 transition duration-200" onClick={() => setMenuOpen(false)}>
+            <Link
+              href="/about-us"
+              className="text-white hover:text-gray-600 transition duration-200"
+              onClick={() => setMenuOpen(false)}
+            >
               About us
             </Link>
-            <Link href="#news" className="text-white hover:text-gray-600 transition duration-200" onClick={() => setMenuOpen(false)}>
-              News
-            </Link>
-            {/* Enlace corregido en el menú móvil */}
-            <Link href="/shop" className="text-white hover:text-gray-600 transition duration-200" onClick={() => setMenuOpen(false)}>
+            <Link
+              href="/shop"
+              className="text-white hover:text-gray-600 transition duration-200"
+              onClick={() => setMenuOpen(false)}
+            >
               Shop
             </Link>
-            <Link href="#contact" className="text-white hover:text-gray-600 transition duration-200" onClick={() => setMenuOpen(false)}>
+            <Link
+              href="/appointments"
+              className="text-white hover:text-gray-600 transition duration-200"
+              onClick={() => setMenuOpen(false)}
+            >
               Contact us
             </Link>
           </nav>
